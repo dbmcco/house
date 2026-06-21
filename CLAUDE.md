@@ -1,15 +1,40 @@
-# House Development Standards
+@../../claude-workspace/memories/base/interaction-style.md
+@../../claude-workspace/memories/base/core-principles.md
+@../../claude-workspace/memories/base/code-standards.md
+@../../claude-workspace/memories/base/version-control.md
+@../../claude-workspace/memories/workflows/tdd.md
+@../../claude-workspace/memories/workflows/llm-driven-development.md
+@../../claude-workspace/memories/workflows/rifts.md
 
-## Project Context
-This workspace is part of the larger `experiments` ecosystem. All development should follow the overarching principles of autonomy, lightweight implementation, and agent-centricity.
+# House Digital Twin
 
-## Workflow
-1.  **Design First**: Always use the `brainstorming` skill before implementing new features or modules.
-2.  **Agent Isolation**: When working in a sub-module (e.g., `energy`), ensure changes do not leak into other modules' state or logic.
-3.  **Event Integrity**: Respect the transient nature of the eventbus. Never use it for historical data storage.
+Project context for agents working on the House ecosystem.
 
-## Tech Stack
-- **Runtime**: Node.js / Python / Shell (as needed for specific agents).
-- **Communication**: `workgraph` Eventbus (Transient).
-- **Persistence**: Localized SQLite or JSON/CSV within each agent's directory.
-- **Financial Integration**: TillerHQ / Founder Finance.
+## Purpose
+
+Build a modular home Digital Twin that coordinates energy, property, finance, and core orchestration signals to improve household efficiency, cost, safety, and situational awareness.
+
+## Current Phase
+
+Early bootstrap and design. Prefer discussion, brainstorming, and clear module contracts before implementation.
+
+## Modules
+
+- `core`: lightweight event routing, module registry, and shared contracts.
+- `energy`: solar, battery, demand, weather, and tariff-aware optimization.
+- `finance`: home expense auditing and total cost of ownership analysis.
+- `property`: maintenance, physical assets, sensors, security, and environmental state.
+
+## Working Rules
+
+- Use the brainstorming superpower before new feature/module work.
+- Keep module state and logic isolated unless a shared boundary is explicitly designed.
+- Treat the event bus as transient coordination, not historical storage.
+- Prefer explicit data contracts and provenance over informal string matching or hidden coupling.
+- Do not optimize one module at the expense of the root House North Star.
+
+## Tech Notes
+
+- Runtime may vary by module: Node.js, Python, or shell as appropriate.
+- Persistence should be module-local until a shared store is designed.
+- Finance integrations should align with TillerHQ / Founder Finance boundaries.
